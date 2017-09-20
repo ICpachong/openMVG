@@ -26,7 +26,7 @@ build_script:
   - cmake --build . --config %configuration% 
 
 test_script:
-  - ctest -C %configuration%
+  - if "%configuration%" == "Release" ctest -C %configuration%
 
 build:
   parallel: true
